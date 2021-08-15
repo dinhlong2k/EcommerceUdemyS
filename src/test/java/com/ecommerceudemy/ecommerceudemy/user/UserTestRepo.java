@@ -74,4 +74,12 @@ public class UserTestRepo {
         if(user ==null) System.out.println("OK");
         else System.out.println("Duplicated");
     }
+
+    @Test
+    public void testUpdateEnabled(){
+        Integer id=5;
+        userRepo.updateEnableUser(id,true);
+
+    }
+
 }

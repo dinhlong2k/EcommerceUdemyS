@@ -143,4 +143,9 @@ public class UserServiceImp implements UserService {
 
         userRepo.deleteByUserId(id);
     }
+
+    @Override
+    public void updateUserEnabledStatus(Integer id, boolean enabled){
+            userRepo.updateEnableUser(id, enabled);
+    }
 }

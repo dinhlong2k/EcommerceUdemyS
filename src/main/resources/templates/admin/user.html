@@ -204,8 +204,8 @@
                     <td><h5>[[${users.toString}]]</h5></td>
                     <td class="icon">
 
-                        <a th:if="${users.enabled ==true} " class="bi bi-toggle2-on fa-2x" style="color: green"></a>
-                        <a th:if="${users.enabled ==false}" class="bi bi-toggle2-off fa-2x" style="color: gray"></a>
+                        <a th:if="${users.enabled ==true} " class="bi bi-toggle2-on fa-2x" style="color: green" th:href="@{'/admin/users/enabled/' + ${users.userId} + '/false' }"></a>
+                        <a th:if="${users.enabled ==false}" class="bi bi-toggle2-off fa-2x" style="color: gray" th:href="@{'/admin/users/enabled/' + ${users.userId} + '/true' }"></a>
                     </td>
                     <td>
                         <a class="bi bi-pencil-square fa-2x icon-dark" th:href="@{'/admin/users/edit/' + ${users.userId}}"></a>

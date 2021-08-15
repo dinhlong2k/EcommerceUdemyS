@@ -19,5 +19,6 @@ public interface UserService {
     public User convertUserDTOtoUser(UserDTO userDTO,User user);
     public UserDTO converUsertoUserDTO(UserDTO userDTO,User user);
     public void deleteUser(Integer id) throws UserNotFoundException;
+    public void updateUserEnabledStatus(Integer id,boolean enabled);
 
 }
