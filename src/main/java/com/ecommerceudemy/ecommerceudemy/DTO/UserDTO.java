@@ -22,12 +22,14 @@ public class UserDTO {
 
     private boolean enabled;
 
+    private String photo;
     private Set<Roles> listRole=new HashSet<>();
 
     public UserDTO() {
     }
 
-    public UserDTO(String firstName, String lastName, String email, String password, String confirmPassword, String phoneNumber, boolean enabled, Set<Roles> listRole) {
+    public UserDTO(Integer userId, String firstName, String lastName, String email, String password, String confirmPassword, String phoneNumber, boolean enabled, String photo, Set<Roles> listRole) {
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -35,6 +37,7 @@ public class UserDTO {
         this.confirmPassword = confirmPassword;
         this.phoneNumber = phoneNumber;
         this.enabled = enabled;
+        this.photo = photo;
         this.listRole = listRole;
     }
 
@@ -108,5 +111,13 @@ public class UserDTO {
 
     public void setListRole(Set<Roles> listRole) {
         this.listRole = listRole;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

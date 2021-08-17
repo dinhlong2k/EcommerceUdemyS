@@ -114,7 +114,7 @@ public class UserServiceImp implements UserService {
         user.setPassword(userDTO.getPassword());
         Set<Roles> setRole=userDTO.getListRole();
         user.setRoles(setRole);
-
+        user.setPhotos(userDTO.getPhoto());
         return user;
 
     }
@@ -130,6 +130,7 @@ public class UserServiceImp implements UserService {
         userDTO.setPhoneNumber(user.getPhoneNumber());
         Set<Roles> setRoles=user.getRoles();
         userDTO.setListRole(setRoles);
+        userDTO.setPhoto(user.getPhotos());
         return userDTO;
     }
 
