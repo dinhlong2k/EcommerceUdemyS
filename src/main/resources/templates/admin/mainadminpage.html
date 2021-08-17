@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Admin Management</title>
+</head>
+<body>
+<div>
+    <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-light">
+            <!--<div class="media d-flex align-items-center"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                <div class="media-body">
+                    <h4 class="m-0">Jason Doe</h4>
+                    <p class="font-weight-light text-muted mb-0">Web developer</p>
+                </div>
+            </div>-->
+            <div>
+                <a class="navbar-brand" th:href="@{/}">
+                    <img th:src="@{/images/tinder.svg}" width="70px" height="60px" >
+                </a>
+            </div>
+        </div>
+
+        <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"><h3>Manage</h3></p>
+
+        <ul class="nav flex-column bg-white mb-0">
+            <li class="nav-item">
+                <a th:href="@{/admin/adminpage}" class="nav-link text-dark font-roboto bg-light">
+                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                    Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/admin/users}" class="nav-link text-dark font-roboto">
+                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                    Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/categories}" class="nav-link text-dark ">
+                    <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                    Categories
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/brands}" class="nav-link text-dark">
+                    <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                    Brands
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/products}" class="nav-link text-dark">
+                    <i class="fas fa-store-alt mr-3 text-primary fa-fw"></i>
+                    Products
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="@{/admin/customers}" class="nav-link text-dark">
+                    <i class="far fa-address-card mr-3 text-primary fa-fw"></i>
+                    Customers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/ship}" class="nav-link text-dark">
+                    <i class="bi bi-truck mr-3 text-primary fa-fw"></i>
+                    Ship
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/report}" class="nav-link text-dark">
+                    <i class="bi bi-chat-right-text mr-3 text-primary fa-fw"></i>
+                    Report
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/customers}" class="nav-link text-dark">
+                    <i class="far fa-address-card mr-3 text-primary fa-fw"></i>
+                    Customers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/orders}" class="nav-link text-dark">
+                    <i class="fab fa-shopify mr-3 text-primary fa-fw"></i>
+                    Orders
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/articles}" class="nav-link text-dark ">
+                    <i class="fas fa-clipboard mr-3 text-primary fa-fw"></i>
+                    Articles
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/menu}" class="nav-link text-dark ">
+                    <i class="bi bi-three-dots-vertical mr-3 text-primary fa-fw"></i>
+                    Menu
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@{/admin/setting}" class="nav-link text-dark">
+                    <i class="bi bi-sliders mr-3 text-primary fa-fw"></i>
+                    Setting
+                </a>
+            </li>
+        </ul>
+
+        <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
+
+        <ul class="nav flex-column bg-white mb-0">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark font-italic">
+                    <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                    Area charts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark font-italic">
+                    <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                    Bar charts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark font-italic">
+                    <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+                    Pie charts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark font-italic">
+                    <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+                    Line charts
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End vertical navbar -->
+
+    <!-- Page content holder -->
+    <div class="page-content p-5" id="content">
+        <!-- Toggle button -->
+        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold" ></small></button>
+    </div>
+
+    <div class="page-content p-5" id="content1">
+        <div>
+            <h5>Ecommerce Udemy</h5>
+        </div>
+        <div class="text-center">
+            <p>Ecommerce Udemy Shop - Copyright &copy;Ecommerce</p>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $(function() {
+        // Sidebar toggle behavior
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar, #content,#content1').toggleClass('active');
+        });
+    });
+</script>
+</html>

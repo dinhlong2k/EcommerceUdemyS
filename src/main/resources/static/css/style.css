@@ -1,0 +1,127 @@
+*.icon-white{
+    color: white;
+}
+*.icon-silver{
+    color: silver;
+}
+*.icon-green{
+    color: limegreen;
+}
+*.icon-dark{
+    color: gray;
+}
+
+.icon{
+    text-align: center;
+}
+
+.iconrecyclebin{
+    text-align: right;
+}
+
+.iconedit{
+    text-align: left;
+}
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+    font-family: "Roboto Thin";
+}
+
+.page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+    background: black;
+    font-family: "Roboto Thin";
+    margin-left: -17rem;
+}
+
+#content.active {
+    background: black;
+    width: 100%;
+    margin: 0;
+}
+
+#content1.active {
+    width: 100%;
+    margin: 0;
+}
+
+#navcolor{
+    background: black;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        background: black;
+        margin-left: -17rem;
+    }
+    #sidebar.active {
+        background: black;
+        font-family: "Roboto Thin";
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+    #content1 {
+        background: black;
+        width: 100%;
+        margin: 0;
+    }
+    #content.active {
+        font-family: "Roboto Thin";
+        background: black;
+        margin-left: 17rem;
+        width: calc(100% - 17rem);
+    }
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+    background: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+.button {
+    background-color: whitesmoke; /* Green */
+    border-radius: 6px;;
+    text-align: center;
+    font-size: 16px;
+}
+
+
