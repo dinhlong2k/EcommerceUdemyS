@@ -2,6 +2,10 @@ package com.ecommerceudemy.ecommerceudemy.admin;
 
 import com.ecommerceudemy.ecommerceudemy.DTO.UserDTO;
 import com.ecommerceudemy.ecommerceudemy.Exception.UserNotFoundException;
+import com.ecommerceudemy.ecommerceudemy.Test.FileDTO;
+import com.ecommerceudemy.ecommerceudemy.Test.FirebaseService;
+import com.ecommerceudemy.ecommerceudemy.Test.StorageService;
+import com.ecommerceudemy.ecommerceudemy.Test.StorageStrategy;
 import com.ecommerceudemy.ecommerceudemy.model.Roles;
 import com.ecommerceudemy.ecommerceudemy.model.User;
 import com.ecommerceudemy.ecommerceudemy.service.UserService;
@@ -10,9 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.management.relation.Role;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,6 +29,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private StorageService storageService;
 
     @GetMapping("/users")
     public String HomeUser(ModelMap modelMap){
@@ -46,7 +55,7 @@ public class UserController {
     }
 
     @PostMapping("/users/saveuser")
-    public String create(ModelMap modelMap, @ModelAttribute("userDto") UserDTO userDTO, RedirectAttributes redirectAttributes){
+    public String create(ModelMap modelMap, @ModelAttribute("userDto") UserDTO userDTO, RedirectAttributes redirectAttributes, @RequestParam("image")MultipartFile multipartFile) throws Exception {
 
         String email=userDTO.getEmail();
         boolean check=userService.checkIdEmail(userDTO.getEmail(),userDTO.getUserId());
@@ -56,7 +65,12 @@ public class UserController {
             return "redirect:/admin/users";
         }
 
+        FileDTO fileDTO=storageService.uploadFile(multipartFile);
+        String filename=fileDTO.getFileName();
+        userDTO.setPhoto(filename);
         userService.saveUser(userDTO);
+
+
         redirectAttributes.addFlashAttribute("message","The user have been save successfully");
         return "redirect:/admin/users";
     }
